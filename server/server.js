@@ -247,6 +247,14 @@ OUTPUT: Return ONLY valid JSON matching the schema exactly.`;
   }
 });
 
+app.get('/api/health', (req, res) => {
+  res.json({
+    status: 'OK',
+    message: 'Your API is running',
+    timestamp: new Date().toISOString()
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`[Server] ReCheck backend running on port ${PORT}`);
 });
